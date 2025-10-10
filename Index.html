@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High or Low - Rules & Introduction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="Index.html">
+                <i data-lucide="cards"></i>
+                High or Low
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Index.html">
+                            <i data-lucide="info"></i> Introduction
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="game.html">
+                            <i data-lucide="play"></i> Play Game
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/MasonSommers">
+                            <i data-lucide="github"></i> GitHub
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:mason.sommers@drake.edu">
+                            <i data-lucide="mail"></i> Email
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero-section" class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="display-4 mb-4">Welcome to High or Low</h1>
+                    <p class="lead mb-4">A simple card game where you guess if the next card will be higher or lower</p>
+                    <p class="mb-4">Start with $100, place your bets, and see how much you can win!</p>
+                    <a href="game.html" class="btn btn-primary btn-lg">
+                        <i data-lucide="play"></i>
+                        Play Game
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section id="how-to-play" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2>How to Play</h2>
+                    <p class="text-muted">It's pretty simple, just follow these steps:</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="mb-4 p-3 bg-white rounded shadow-sm">
+                        <h5 class="mb-2">
+                            <i data-lucide="dollar-sign" class="text-primary me-2"></i>
+                            1. Place Your Bet
+                        </h5>
+                        <p class="mb-0">Type in how much you want to bet or use the quick buttons (+$10, +$100, +$1000, MAX).</p>
+                    </div>
+
+                    <div class="mb-4 p-3 bg-white rounded shadow-sm">
+                        <h5 class="mb-2">
+                            <i data-lucide="cards" class="text-success me-2"></i>
+                            2. First Card Shows Up
+                        </h5>
+                        <p class="mb-0">Click "Place Bet" and the first card appears. This is your reference card.</p>
+                    </div>
+
+                    <div class="mb-4 p-3 bg-white rounded shadow-sm">
+                        <h5 class="mb-2">
+                            <i data-lucide="target" class="text-warning me-2"></i>
+                            3. Make Your Guess
+                        </h5>
+                        <p class="mb-0">Click High, Low, or Same. High means the next card will be higher, Low means lower, Same means same value.</p>
+                    </div>
+
+                    <div class="mb-4 p-3 bg-white rounded shadow-sm">
+                        <h5 class="mb-2">
+                            <i data-lucide="trending-up" class="text-info me-2"></i>
+                            4. See What Happens
+                        </h5>
+                        <p class="mb-0">If you're right, your bet gets multiplied by the odds shown. If you're wrong, you lose everything.</p>
+                    </div>
+
+                    <div class="mb-4 p-3 bg-white rounded shadow-sm">
+                        <h5 class="mb-2">
+                            <i data-lucide="credit-card" class="text-secondary me-2"></i>
+                            5. Cash Out or Keep Going
+                        </h5>
+                        <p class="mb-0">After winning, you can cash out to add money to your balance, or keep playing with your winnings.</p>
+                    </div>
+
+                    <div class="mb-4 p-3 bg-white rounded shadow-sm">
+                        <h5 class="mb-2">
+                            <i data-lucide="x-circle" class="text-danger me-2"></i>
+                            6. Game Over on Wrong Guess
+                        </h5>
+                        <p class="mb-0">Guess wrong and you lose your bet. Start over with a new deck!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Rules Section -->
+    <section id="game-rules" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2>Game Rules</h2>
+                    <p class="text-muted">Here's what you need to know:</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-3">
+                    <div class="p-3 bg-white rounded shadow-sm h-100">
+                        <h5 class="mb-2">
+                            <i data-lucide="wallet" class="text-success me-2"></i>
+                            Starting Balance
+                        </h5>
+                        <p class="mb-0">Everyone starts with $100. Don't bet more than you have!</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <div class="p-3 bg-white rounded shadow-sm h-100">
+                        <h5 class="mb-2">
+                            <i data-lucide="shuffle" class="text-primary me-2"></i>
+                            Fresh Deck Every Game
+                        </h5>
+                        <p class="mb-0">Each game uses a new shuffled 52-card deck. No tricks here!</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <div class="p-3 bg-white rounded shadow-sm h-100">
+                        <h5 class="mb-2">
+                            <i data-lucide="hash" class="text-info me-2"></i>
+                            Card Values
+                        </h5>
+                        <p class="mb-0">Ace = 1, 2-10 = face value, Jack = 11, Queen = 12, King = 13. Suits don't matter.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-3">
+                    <div class="p-3 bg-white rounded shadow-sm h-100">
+                        <h5 class="mb-2">
+                            <i data-lucide="trending-up" class="text-warning me-2"></i>
+                            Betting
+                        </h5>
+                        <p class="mb-0">Minimum bet is > 0. Maximum is whatever you have. Use the buttons or type your own amount.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2>Ready to Play?</h2>
+                    <p class="mb-4">Now that you know how it works, give it a try!</p>
+                    <a href="game.html" class="btn btn-primary btn-lg">
+                        <i data-lucide="play"></i>
+                        Start Playing
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="mb-0">
+                        <i data-lucide="copyright"></i> 2025 Mason Sommers - High or Low Card Game
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
