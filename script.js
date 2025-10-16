@@ -531,9 +531,11 @@ function gameCheck() {
 }
 
 //the function that is called when the cash out button is clicked
+
 function cashOutFunction() {
+    console.log("Cash out button clicked");
     if(gameCheck() == false){
-        startGameFirstAlert();
+        alertStartGameFirst();
         console.log("Game not started!");
         return;
     }
@@ -543,6 +545,7 @@ function cashOutFunction() {
     balanceElement.textContent = `Balance: $${balance}`;
     gameEnd();
     placeBet.disabled = false;
+    return;
 }
 
 //gets the image for the card
@@ -603,9 +606,9 @@ window.resetGame = resetGame;
 window.highButtonFunction = highButtonFunction;
 window.lowButtonFunction = lowButtonFunction;
 window.sameButtonFunction = sameButtonFunction;
-window.alertDeckEmpty = alertDeckEmpty;
-window.alertNotEnoughMoney = alertNotEnoughMoney;
-window.alertStartGameFirst = alertStartGameFirst;
+window.deckEmptyAlert = deckEmptyAlert;
+window.notEnoughMoneyAlert = notEnoughMoneyAlert;
+window.startGameFirstAlert = startGameFirstAlert;
 window.celebrateWin = celebrateWin;
 window.celebrateLoss = celebrateLoss;
 window.checkOdds = checkOdds;
