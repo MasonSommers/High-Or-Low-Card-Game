@@ -90,8 +90,8 @@ function startGame() {
     placeBet.disabled = true;
     if (balance < betAmount.value || betAmount.value <= 0) {
         notEnoughMoneyAlert();
-        return;
         placeBet.disabled = false;
+        return;
     }
     //creating a new deck and shuffling it
     deck = new Deck();
